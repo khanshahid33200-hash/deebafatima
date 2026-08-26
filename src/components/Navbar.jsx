@@ -3,10 +3,12 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import { useAuth } from '@/context/AuthContext';
 
 export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const { user, logout } = useAuth();
 
   const navItems = [
     { label: 'HOME', href: '/' },
@@ -49,11 +51,32 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* CTA Button */}
-        <div className="hidden md:flex items-center">
+        {/* Auth & CTA Buttons */}
+        <div className="hidden md:flex items-center gap-3">
+          {user ? (
+            <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-[#f9d5dc]">
+              <span className="text-xs font-bold text-[#2b1424] max-w-[120px] truncate">
+                {user.email}
+              </span>
+              <button
+                onClick={logout}
+                className="text-[0.7rem] font-extrabold text-[#ff3366] hover:underline"
+              >
+                Sign Out
+              </button>
+            </div>
+          ) : (
+            <Link
+              href="/login"
+              className="px-4 py-2 bg-white border border-[#f9d5dc] text-[#ff3366] hover:bg-[#ffe6eb] text-xs font-bold rounded-full transition-colors"
+            >
+              Sign In 🔥
+            </Link>
+          )}
+
           <Link
             href="/contact"
-            className="px-6 py-2.5 bg-[#ff3366] hover:bg-[#e6004c] text-white text-xs font-bold tracking-wide rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 group"
+            className="px-5 py-2.5 bg-[#ff3366] hover:bg-[#e6004c] text-white text-xs font-bold tracking-wide rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 group"
           >
             <span>Let's Connect</span>
             <span className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
@@ -88,9 +111,16 @@ export default function Navbar() {
             );
           })}
           <Link
+            href="/login"
+            onClick={() => setIsOpen(false)}
+            className="text-xs font-bold text-[#ff3366] py-1"
+          >
+            {user ? `Signed in as ${user.email}` : 'Sign In 🔥'}
+          </Link>
+          <Link
             href="/contact"
             onClick={() => setIsOpen(false)}
-            className="mt-2 text-center py-2.5 bg-[#ff3366] text-white text-xs font-bold rounded-full"
+            className="mt-1 text-center py-2.5 bg-[#ff3366] text-white text-xs font-bold rounded-full"
           >
             Let's Connect ↗
           </Link>
