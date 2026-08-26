@@ -6,12 +6,20 @@ import { AuthProvider } from '@/context/AuthContext';
 export const metadata = {
   title: 'Deeba Fatima — Clinical Research & Operations Professional',
   description: 'Personal portfolio & clinical trial operations showcase of Deeba Fatima.',
+  icons: {
+    icon: '/deeba_avatar.jpg',
+    shortcut: '/deeba_avatar.jpg',
+    apple: '/deeba_avatar.jpg',
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/deeba_avatar.jpg" type="image/jpeg" />
+        <link rel="shortcut icon" href="/deeba_avatar.jpg" type="image/jpeg" />
+        <link rel="apple-touch-icon" href="/deeba_avatar.jpg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
