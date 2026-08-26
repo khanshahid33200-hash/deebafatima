@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-pink: #fdf0f3;
+    --card-pink: #ffffff;
+    --accent-pink: #ff3366;
+    --accent-pink-hover: #e6004c;
+    --accent-soft: #ffe6eb;
+    --border-pink: #f9d5dc;
+    --text-dark: #2b1424;
+    --text-[#2b1424]: #2b1424;
+    --text-muted: #6b4c5e;
+  }
+
+  body {
+    background-color: var(--bg-pink);
+    color: var(--text-dark);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  .font-script {
+    font-family: 'Sacramento', 'Caveat', cursive;
+  }
+
+  .font-doodle {
+    font-family: 'Caveat', cursive;
+  }
+}
+
+@keyframes floatAnim {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: floatAnim 4s ease-in-out infinite;
+}
+
+.pink-glass-glow {
+  box-shadow: 0 10px 40px -10px rgba(255, 51, 102, 0.25), 0 0 20px 0 rgba(255, 51, 102, 0.15);
+}
+
+.pink-card-shadow {
+  box-shadow: 0 8px 30px rgba(255, 77, 121, 0.06);
+}
