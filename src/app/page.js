@@ -74,7 +74,7 @@ export default function Home() {
                 ✉
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/deeba-fatima-855b83339/"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"

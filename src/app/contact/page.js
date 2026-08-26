@@ -5,7 +5,6 @@ import { saveContactMessage } from '@/lib/firestore';
 
 export default function ContactPage() {
   const [copiedEmail, setCopiedEmail] = useState(false);
-  const [copiedPhone, setCopiedPhone] = useState(false);
 
   // Form State
   const [name, setName] = useState('');
@@ -19,12 +18,6 @@ export default function ContactPage() {
     navigator.clipboard.writeText('deebaf539@gmail.com');
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
-  };
-
-  const copyPhone = () => {
-    navigator.clipboard.writeText('+918178570340');
-    setCopiedPhone(true);
-    setTimeout(() => setCopiedPhone(false), 2000);
   };
 
   const handleSubmit = async (e) => {
@@ -68,7 +61,7 @@ export default function ContactPage() {
         <div className="space-y-6">
           <div className="bg-white rounded-3xl p-8 border border-[#f9d5dc] pink-card-shadow space-y-6">
             <p className="text-sm text-[#6b4c5e] font-medium leading-relaxed">
-              Open to clinical research assistant (CTA), coordinator (CRC), or trial administration opportunities. Send a message directly to my Firestore database or contact me below.
+              Open to clinical research assistant (CTA), coordinator (CRC), or trial administration opportunities. Send a message directly to my Firestore database or connect with me on LinkedIn below.
             </p>
 
             <div className="space-y-3 text-xs font-bold text-[#2b1424]">
@@ -84,12 +77,20 @@ export default function ContactPage() {
 
               <div className="flex items-center justify-between p-4 bg-[#fff0f4] rounded-2xl border border-[#f9d5dc]">
                 <div className="flex items-center gap-3">
-                  <span className="text-lg">📞</span>
-                  <a href="tel:+918178570340" className="hover:text-[#ff3366]">+91 81785 70340</a>
+                  <span className="text-lg">💼</span>
+                  <a
+                    href="https://www.linkedin.com/in/deeba-fatima-855b83339/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#ff3366] flex items-center gap-1"
+                  >
+                    <span>LinkedIn Profile</span>
+                    <span>↗</span>
+                  </a>
                 </div>
-                <button onClick={copyPhone} className="px-3 py-1 bg-white text-[#ff3366] rounded-full border border-[#f9d5dc]">
-                  {copiedPhone ? 'copied' : 'copy'}
-                </button>
+                <span className="px-3 py-1 bg-white text-[#ff3366] rounded-full border border-[#f9d5dc] text-[0.7rem]">
+                  Connected
+                </span>
               </div>
 
               <div className="flex items-center gap-3 p-4 bg-[#fff0f4] rounded-2xl border border-[#f9d5dc]">

@@ -28,7 +28,7 @@ export default function Footer() {
 
           <div className="flex items-center gap-4 text-xs font-bold text-[#2b1424]">
             <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-[#ff3366]">GitHub</a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-[#ff3366]">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/deeba-fatima-855b83339/" target="_blank" rel="noreferrer" className="hover:text-[#ff3366]">LinkedIn</a>
             <a href="mailto:deebaf539@gmail.com" className="hover:text-[#ff3366]">Email</a>
           </div>
         </div>
